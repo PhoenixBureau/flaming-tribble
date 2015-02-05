@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+<channel>
+<title>A Brief and Correct Guide to Thought</title>
+<description>Its Uses and Limitations</description>
+<language>en</language>
+<copyright>Copyright 2015 SimonForman</copyright>
+<pubDate>Sat, 24 Jan 2015 03:18:37 GMT</pubDate>
+<lastBuildDate>Sat, 24 Jan 2015 03:18:37 GMT</lastBuildDate>
+<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+<generator>TiddlyWiki 2.8.1</generator>
+<item>
+<title>LoFModel</title>
+<description>A model of computation  (I think it will turn out to be as useful and basic as the other biggies: Turing Machine, Lambda Calculus, Combinator Calculus.  Are there others?)&lt;br&gt;&lt;br&gt;In Python it can be expressed as a &lt;em&gt;program&lt;/em&gt; consisting in a dict mapping expression names to &lt;a tiddlylink=&quot;LoF&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoF&quot; href=&quot;null#LoF&quot; class=&quot;externalLink null&quot;&gt;LoF&lt;/a&gt; expressions.  There is also a &lt;em&gt;register&lt;/em&gt; which is a mapping from names to values (either Mark or Void) and which serves as the state of the computer.  At each cycle the expressions in the program are reified with the values in the register and then reduced to find the new values for the register.&lt;br&gt;&lt;br&gt;I'm pretty sure that it can be shown to be Turing Complete.&lt;br&gt;&lt;br&gt;All state is captured in the register and all operations are captured in the program (in a form that is very easy to manipulate and reason about.)  Any computable function should be expressible in this form.&lt;br&gt;&lt;br&gt;It also shows quite starkly the &quot;&lt;a tiddlylink=&quot;VonNeumannBottleneck&quot; refresh=&quot;link&quot; title=&quot;External link to null#VonNeumannBottleneck&quot; href=&quot;null#VonNeumannBottleneck&quot; class=&quot;externalLink null&quot;&gt;VonNeumannBottleneck&lt;/a&gt;&quot; that Backus decried in his Turing Award speech.  If you build a model of a typical CPU (as I intend to do for the &lt;a tiddlylink=&quot;WirthRISC&quot; refresh=&quot;link&quot; title=&quot;External link to null#WirthRISC&quot; href=&quot;null#WirthRISC&quot; class=&quot;externalLink null&quot;&gt;WirthRISC&lt;/a&gt; CPU) and then watch it working you will see that the vast majority of the bits in the register are untouched by the action of any particular machine instruction.&lt;br&gt;&lt;br&gt;Long-term I hope that by specifying hardware circuits in &lt;a tiddlylink=&quot;LoFModel&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoFModel&quot; href=&quot;null#LoFModel&quot; class=&quot;externalLink null&quot;&gt;LoFModel&lt;/a&gt; form and then programming them using some sort of &quot;sufficiently smart&quot; &lt;a tiddlylink=&quot;JoyCompiler&quot; refresh=&quot;link&quot; title=&quot;External link to null#JoyCompiler&quot; href=&quot;null#JoyCompiler&quot; class=&quot;externalLink null&quot;&gt;JoyCompiler&lt;/a&gt; I may be able to make some interesting and useful headway in the effort to use our silicon in efficient ways.  I think that there should definitely be some synergy between the &lt;a tiddlylink=&quot;LoF&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoF&quot; href=&quot;null#LoF&quot; class=&quot;externalLink null&quot;&gt;LoF&lt;/a&gt; forms and the pure and lovely &lt;a tiddlylink=&quot;JoyLang&quot; refresh=&quot;link&quot; title=&quot;External link to null#JoyLang&quot; href=&quot;null#JoyLang&quot; class=&quot;externalLink null&quot;&gt;JoyLang&lt;/a&gt; that will be a a lot of fun.</description>
+<link>null#LoFModel</link>
+<pubDate>Sat, 24 Jan 2015 03:18:37 GMT</pubDate>
+
+</item>
+<item>
+<title>VonNeumannBottleneck</title>
+<description>The &lt;a title=&quot;External link to https://en.wikipedia.org/wiki/Von_Neumann_architecture#Von_Neumann_bottleneck&quot; href=&quot;https://en.wikipedia.org/wiki/Von_Neumann_architecture#Von_Neumann_bottleneck&quot; class=&quot;externalLink&quot;&gt;Von Neumann Bottleneck&lt;/a&gt;, examples include:&lt;br&gt;&lt;ul&gt;&lt;li&gt; Copying disk sectors word-by-word.&lt;/li&gt;&lt;li&gt; Reading and updating display RAM (again word-by-word.)&lt;/li&gt;&lt;li&gt; Only perfoming operation involving at most three registers (or one memory location or I/O device) at a time.&lt;/li&gt;&lt;/ul&gt;</description>
+<link>null#VonNeumannBottleneck</link>
+<pubDate>Sat, 24 Jan 2015 03:15:14 GMT</pubDate>
+
+</item>
+<item>
+<title>WirthRISC</title>
+<description>The RISC processor designed by &lt;a tiddlylink=&quot;ProfessorNiklausWirth&quot; refresh=&quot;link&quot; title=&quot;External link to null#ProfessorNiklausWirth&quot; href=&quot;null#ProfessorNiklausWirth&quot; class=&quot;externalLink null&quot;&gt;ProfessorNiklausWirth&lt;/a&gt; for the &lt;a tiddlylink=&quot;OberonSystem&quot; refresh=&quot;link&quot; title=&quot;External link to null#OberonSystem&quot; href=&quot;null#OberonSystem&quot; class=&quot;externalLink null&quot;&gt;OberonSystem&lt;/a&gt;.&lt;br&gt;&lt;br&gt;I've written a &lt;a title=&quot;External link to https://github.com/PhoenixBureau/PythonOberon&quot; href=&quot;https://github.com/PhoenixBureau/PythonOberon&quot; class=&quot;externalLink&quot;&gt;Python emulator&lt;/a&gt; for the RISC cpu and some of the peripherals to explore the operation of the system in detail.&lt;br&gt;&lt;br&gt;This is a simple but sufficient cpu for running e.g. the code generated by the Oberon compiler.  (Which isn't surprising since that's the purpose for which it was designed.)  It is &quot;simple enough but no simpler.&quot;&lt;br&gt;&lt;br&gt;One of the things I hope to do is write a &lt;a tiddlylink=&quot;LoF&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoF&quot; href=&quot;null#LoF&quot; class=&quot;externalLink null&quot;&gt;LoF&lt;/a&gt; &lt;a tiddlylink=&quot;LogicCircuits&quot; refresh=&quot;link&quot; title=&quot;External link to null#LogicCircuits&quot; href=&quot;null#LogicCircuits&quot; class=&quot;externalLink null&quot;&gt;LogicCircuits&lt;/a&gt; version of the (verilog) RISC as a &lt;a tiddlylink=&quot;LoFModel&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoFModel&quot; href=&quot;null#LoFModel&quot; class=&quot;externalLink null&quot;&gt;LoFModel&lt;/a&gt; computer to show it can be done, see what it looks like in that form and maybe even optimize it some, and use it as a sounding board for exploring ways around the &lt;a tiddlylink=&quot;VonNeumannBottleneck&quot; refresh=&quot;link&quot; title=&quot;External link to null#VonNeumannBottleneck&quot; href=&quot;null#VonNeumannBottleneck&quot; class=&quot;externalLink null&quot;&gt;VonNeumannBottleneck&lt;/a&gt;.&lt;br&gt;</description>
+<link>null#WirthRISC</link>
+<pubDate>Sat, 24 Jan 2015 03:11:05 GMT</pubDate>
+
+</item>
+<item>
+<title>DefaultTiddlers</title>
+<description>&lt;a tiddlylink=&quot;PreFace&quot; refresh=&quot;link&quot; title=&quot;External link to null#PreFace&quot; href=&quot;null#PreFace&quot; class=&quot;externalLink null&quot;&gt;PreFace&lt;/a&gt;</description>
+<link>null#DefaultTiddlers</link>
+<pubDate>Fri, 23 Jan 2015 06:13:00 GMT</pubDate>
+
+</item>
+<item>
+<title>DistinctionCircuit</title>
+<description>To keep the discussion from getting too philosophical let me introduce a distinction circuit, something that converts a distinction about the world into a &quot;logical signal&quot;, whatever that means.  There are a lot of ways to do it, here's one.&lt;br&gt;&lt;br&gt;Set up a voltage divider to deliver a reference voltage to an op-amp and then attach your resistance-based sensor (like a photoresistor) to the other lead.  Viola!  You've got a logical signal from a real world stimulus.</description>
+<link>null#DistinctionCircuit</link>
+<pubDate>Fri, 23 Jan 2015 05:58:00 GMT</pubDate>
+
+</item>
+<item>
+<title>HowDoYouKnow</title>
+<description>How do you know?  The world around you, your body, feelings, emotions, thoughts, sense of identity, all of these are known to you through some subjective experience.  I use the Greek word &lt;em&gt;flux&lt;/em&gt; to stand for all these contents of awareness.&lt;br&gt;&lt;br&gt;In &lt;a tiddlylink=&quot;NeuroLinguisticProgramming&quot; refresh=&quot;link&quot; title=&quot;External link to null#NeuroLinguisticProgramming&quot; href=&quot;null#NeuroLinguisticProgramming&quot; class=&quot;externalLink null&quot;&gt;NeuroLinguisticProgramming&lt;/a&gt; they use the question, &quot;How do </description>
+<link>null#HowDoYouKnow</link>
+<pubDate>Fri, 23 Jan 2015 03:38:00 GMT</pubDate>
+
+</item>
+<item>
+<title>PreFace</title>
+<description>&lt;a tiddlylink=&quot;DrJillBolteTaylor&quot; refresh=&quot;link&quot; title=&quot;External link to null#DrJillBolteTaylor&quot; href=&quot;null#DrJillBolteTaylor&quot; class=&quot;externalLink null&quot;&gt;DrJillBolteTaylor&lt;/a&gt;&lt;br&gt;&lt;br&gt;The world is &lt;em&gt;flux&lt;/em&gt;, &lt;em&gt;experience&lt;/em&gt;, and &lt;em&gt;Self&lt;/em&gt;.  There is the world, the experience of the world, and the experiencer of the world.&lt;br&gt;&lt;br&gt;When you make a distinction, you being a process of &lt;em&gt;naming&lt;/em&gt; that creates a world.  Without naming there is only the triune unity of flux and being and the subjective experience of these.</description>
+<link>null#PreFace</link>
+<pubDate>Thu, 22 Jan 2015 21:49:00 GMT</pubDate>
+
+</item>
+<item>
+<title>GödelMachine</title>
+<description>What if you could write a program that would then write any other program you could ever need provided you could give it a description of the problem that you needed to solve&lt;br&gt;&lt;br&gt;It would basically put you out of work, along with most other programmers.  Would you write that program?</description>
+<link>null#G%C3%B6delMachine</link>
+<pubDate>Thu, 22 Jan 2015 21:44:00 GMT</pubDate>
+
+</item>
+<item>
+<title>MainMenu</title>
+<description>&lt;a tiddlylink=&quot;PreFace&quot; refresh=&quot;link&quot; title=&quot;External link to null#PreFace&quot; href=&quot;null#PreFace&quot; class=&quot;externalLink null&quot;&gt;Preface&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;LoF&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoF&quot; href=&quot;null#LoF&quot; class=&quot;externalLink null&quot;&gt;The Laws of Form&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;LogicCircuits&quot; refresh=&quot;link&quot; title=&quot;External link to null#LogicCircuits&quot; href=&quot;null#LogicCircuits&quot; class=&quot;externalLink null&quot;&gt;LogicCircuits&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;WirthRISC&quot; refresh=&quot;link&quot; title=&quot;External link to null#WirthRISC&quot; href=&quot;null#WirthRISC&quot; class=&quot;externalLink null&quot;&gt;WirthRISC&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;OberonSystem&quot; refresh=&quot;link&quot; title=&quot;External link to null#OberonSystem&quot; href=&quot;null#OberonSystem&quot; class=&quot;externalLink null&quot;&gt;OberonSystem&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;JoyLang&quot; refresh=&quot;link&quot; title=&quot;External link to null#JoyLang&quot; href=&quot;null#JoyLang&quot; class=&quot;externalLink null&quot;&gt;JoyLang&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;HigherOrderSoftware&quot; refresh=&quot;link&quot; title=&quot;External link to null#HigherOrderSoftware&quot; href=&quot;null#HigherOrderSoftware&quot; class=&quot;externalLink null&quot;&gt;HigherOrderSoftware&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;LogicProgramming&quot; refresh=&quot;link&quot; title=&quot;External link to null#LogicProgramming&quot; href=&quot;null#LogicProgramming&quot; class=&quot;externalLink null&quot;&gt;LogicProgramming&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;InTenTion&quot; refresh=&quot;link&quot; title=&quot;External link to null#InTenTion&quot; href=&quot;null#InTenTion&quot; class=&quot;externalLink null&quot;&gt;Intention&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;GödelMachine&quot; refresh=&quot;link&quot; title=&quot;External link to null#GödelMachine&quot; href=&quot;null#GödelMachine&quot; class=&quot;externalLink null&quot;&gt;Gödel Machines&lt;/a&gt;</description>
+<link>null#MainMenu</link>
+<pubDate>Thu, 22 Jan 2015 21:41:00 GMT</pubDate>
+
+</item>
+<item>
+<title>SortingNetworks</title>
+<description>An interesting way to connect banks of bits.</description>
+<link>null#SortingNetworks</link>
+<pubDate>Thu, 22 Jan 2015 21:40:00 GMT</pubDate>
+
+</item>
+<item>
+<title>FormalMethods</title>
+<description>Informal methods are also formal (in a similar way to that in which all digital machines are also analog.)</description>
+<link>null#FormalMethods</link>
+<pubDate>Thu, 22 Jan 2015 18:47:00 GMT</pubDate>
+
+</item>
+<item>
+<title>OberonSystem</title>
+<description>In order to support Oberon as a learning platform I hope to create some tools (both in Python and in Oberon) to make learning about and using it easy.&lt;br&gt;&lt;ul&gt;&lt;li&gt; Need to be able to save/restore memory+state+disk_contents&lt;/li&gt;&lt;li&gt; Introspect memory and saved memory images.&lt;/li&gt;&lt;li&gt; FS (and web?) interface to Oberon disk images.  Oberon disk interface to a directory of files.&lt;/li&gt;&lt;li&gt; SPI interface to the little TTL display.&lt;/li&gt;&lt;li&gt; input gadgets. &lt;a tiddlylink=&quot;TheatricalDisplay&quot; refresh=&quot;link&quot; title=&quot;External link to null#TheatricalDisplay&quot; href=&quot;null#TheatricalDisplay&quot; class=&quot;externalLink null&quot;&gt;TheatricalDisplay&lt;/a&gt;&lt;/li&gt;&lt;li&gt; visualize mapping from source code to machine code, and compilation.&lt;/li&gt;&lt;li&gt; implement &lt;a tiddlylink=&quot;JoyLang&quot; refresh=&quot;link&quot; title=&quot;External link to null#JoyLang&quot; href=&quot;null#JoyLang&quot; class=&quot;externalLink null&quot;&gt;JoyLang&lt;/a&gt;.&lt;/li&gt;&lt;li&gt; Build meta-documents, &lt;a tiddlylink=&quot;LoF&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoF&quot; href=&quot;null#LoF&quot; class=&quot;externalLink null&quot;&gt;LoF&lt;/a&gt;, circuits, (RISC, Oberon,) Joy, HOS&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;ToyRobots&quot; refresh=&quot;link&quot; title=&quot;External link to null#ToyRobots&quot; href=&quot;null#ToyRobots&quot; class=&quot;externalLink null&quot;&gt;ToyRobots&lt;/a&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;br&gt;Sitting staring at the &lt;a tiddlylink=&quot;OberonSystem&quot; refresh=&quot;link&quot; title=&quot;External link to null#OberonSystem&quot; href=&quot;null#OberonSystem&quot; class=&quot;externalLink null&quot;&gt;OberonSystem&lt;/a&gt; running in &lt;a tiddlylink=&quot;PeterDeWachterOberonEmulator&quot; refresh=&quot;link&quot; title=&quot;External link to null#PeterDeWachterOberonEmulator&quot; href=&quot;null#PeterDeWachterOberonEmulator&quot; class=&quot;externalLink null&quot;&gt;PeterDeWachterOberonEmulator&lt;/a&gt; I really began to grasp how badly astray we've gone.&lt;br&gt;&lt;br&gt;The only way to improve or extend this system would be to:&lt;br&gt;&lt;ul&gt;&lt;li&gt; Add additional hardware, gpus or other special procs and peripherals,&lt;/li&gt;&lt;li&gt; Add additional datastructures and algorithms.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Pretty much everything else that modern systems include is waste.&lt;br&gt;</description>
+<link>null#OberonSystem</link>
+<pubDate>Thu, 22 Jan 2015 18:43:00 GMT</pubDate>
+
+</item>
+<item>
+<title>PeterDeWachterOberonEmulator</title>
+<description>&lt;a title=&quot;External link to https://github.com/pdewacht/oberon-risc-emu&quot; href=&quot;https://github.com/pdewacht/oberon-risc-emu&quot; class=&quot;externalLink&quot;&gt;https://github.com/pdewacht/oberon-risc-emu&lt;/a&gt;</description>
+<link>null#PeterDeWachterOberonEmulator</link>
+<pubDate>Thu, 22 Jan 2015 18:42:00 GMT</pubDate>
+
+</item>
+<item>
+<title>CoreTransformationProcess</title>
+<description>&lt;a title=&quot;External link to http://www.coretransformation.org/&quot; href=&quot;http://www.coretransformation.org/&quot; class=&quot;externalLink&quot;&gt;http://www.coretransformation.org/&lt;/a&gt;'</description>
+<link>null#CoreTransformationProcess</link>
+<pubDate>Thu, 22 Jan 2015 18:41:00 GMT</pubDate>
+
+</item>
+<item>
+<title>NorGate</title>
+<description>Each &lt;a tiddlylink=&quot;LoF&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoF&quot; href=&quot;null#LoF&quot; class=&quot;externalLink null&quot;&gt;LoF&lt;/a&gt; container acts as a NOR gate for the contents (given the interpretation of Void = False / Mark = True; under the dual interpretation the gate is NAND, showing that both NOR and NAND are complete Boolean bases.)&lt;br&gt;&lt;br&gt;In effect, a &lt;a tiddlylink=&quot;LoF&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoF&quot; href=&quot;null#LoF&quot; class=&quot;externalLink null&quot;&gt;LoF&lt;/a&gt; form is a &lt;em&gt;signal&lt;/em&gt;, the &lt;em&gt;value&lt;/em&gt; of that signal, and an &lt;em&gt;operation&lt;/em&gt; on some (optional) input signals.</description>
+<link>null#NorGate</link>
+<pubDate>Thu, 22 Jan 2015 17:15:00 GMT</pubDate>
+
+</item>
+<item>
+<title>InTenTion</title>
+<description>Another nice model of &quot;computer&quot; is the idea that we can consider a computer to be a &lt;em&gt;mapping&lt;/em&gt; from human intentions to automatic action.&lt;br&gt;&lt;br&gt;The &lt;a tiddlylink=&quot;HigherOrderSoftware&quot; refresh=&quot;link&quot; title=&quot;External link to null#HigherOrderSoftware&quot; href=&quot;null#HigherOrderSoftware&quot; class=&quot;externalLink null&quot;&gt;HigherOrderSoftware&lt;/a&gt; interface along with &lt;a tiddlylink=&quot;JoyLang&quot; refresh=&quot;link&quot; title=&quot;External link to null#JoyLang&quot; href=&quot;null#JoyLang&quot; class=&quot;externalLink null&quot;&gt;JoyLang&lt;/a&gt; refactoring should let our UI tend towards a one-to-one correspondence between buttons we can press and intentions we can satisfy by some automated activity.&lt;br&gt;&lt;br&gt;Thanks to the &lt;a tiddlylink=&quot;CoreTransformationProcess&quot; refresh=&quot;link&quot; title=&quot;External link to null#CoreTransformationProcess&quot; href=&quot;null#CoreTransformationProcess&quot; class=&quot;externalLink null&quot;&gt;CoreTransformationProcess&lt;/a&gt; we know that all human intentions are arranged in a sort of hierarchy that increases in grace and universality as one goes &quot;up&quot; the chain of levels using the inquiry, &quot;What do you want, through having that, that is even more important.&quot;&lt;br&gt;&lt;br&gt;We know that all activity, however strange, is in some way or path directed toward these &quot;core states&quot;.  This allows us to have greater compassion for other people and gives us a fantastic framework for negotiation.&lt;br&gt;&lt;br&gt;As our technology improves it is becoming vitally important to &quot;sanitize&quot; our intentions to the point that their automatic enactment will be harmonious, ecological, with the people and living systems around us.</description>
+<link>null#InTenTion</link>
+<pubDate>Thu, 22 Jan 2015 17:10:00 GMT</pubDate>
+
+</item>
+<item>
+<title>LogicProgramming</title>
+<description>I'm going to use Kanren-style logic programming for something good.  Got Unification algorithm, will compute logic relations.</description>
+<link>null#LogicProgramming</link>
+<pubDate>Thu, 22 Jan 2015 03:41:00 GMT</pubDate>
+
+</item>
+<item>
+<title>LogicCircuits</title>
+<description>Each &lt;a tiddlylink=&quot;LoF&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoF&quot; href=&quot;null#LoF&quot; class=&quot;externalLink null&quot;&gt;LoF&lt;/a&gt; expression can be considered a schematic for a logic circuit.  Every pair of parentheses is a &lt;a tiddlylink=&quot;NorGate&quot; refresh=&quot;link&quot; title=&quot;External link to null#NorGate&quot; href=&quot;null#NorGate&quot; class=&quot;externalLink null&quot;&gt;NorGate&lt;/a&gt;, the contents of a pair are the inputs to that gate and the value of the (sub-)expression that that pair notates is the output of the gate.  We can describe any logic circuit by a &lt;a tiddlylink=&quot;LoF&quot; refresh=&quot;link&quot; title=&quot;External link to null#LoF&quot; href=&quot;null#LoF&quot; class=&quot;externalLink null&quot;&gt;LoF&lt;/a&gt; expression.</description>
+<link>null#LogicCircuits</link>
+<pubDate>Thu, 22 Jan 2015 03:40:00 GMT</pubDate>
+
+</item>
+<item>
+<title>ProfessorNiklausWirth</title>
+<description>&lt;a title=&quot;External link to http://en.wikipedia.org/wiki/Niklaus_Wirth&quot; href=&quot;http://en.wikipedia.org/wiki/Niklaus_Wirth&quot; class=&quot;externalLink&quot;&gt;http://en.wikipedia.org/wiki/Niklaus_Wirth&lt;/a&gt;</description>
+<link>null#ProfessorNiklausWirth</link>
+<pubDate>Thu, 22 Jan 2015 03:36:00 GMT</pubDate>
+
+</item>
+<item>
+<title>BrickenBasis</title>
+<description>&lt;a tiddlylink=&quot;WilliamBricken&quot; refresh=&quot;link&quot; title=&quot;External link to null#WilliamBricken&quot; href=&quot;null#WilliamBricken&quot; class=&quot;externalLink null&quot;&gt;WilliamBricken&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; OO = O&lt;/li&gt;&lt;li&gt; (O) = _&lt;/li&gt;&lt;li&gt; A(AB) = A(B)&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Complete logical notation/system.</description>
+<link>null#BrickenBasis</link>
+<pubDate>Thu, 22 Jan 2015 03:24:00 GMT</pubDate>
+
+</item>
+</channel>
+</rss>
